@@ -1,4 +1,3 @@
-// Code your design here
 module fifo_sync
 #(
     parameter FIFO_DEPTH = 8,
@@ -16,12 +15,12 @@ module fifo_sync
     output full
 );
 
-    localparam FIFO_DEPTH_LOG = $clog2(FIFO_DEPTH); // FIFO_DEPTH_LOG = 3 (to represent 0 to 7)
+    localparam FIFO_DEPTH_LOG = $clog2(FIFO_DEPTH); 
 
-    // Declare a bi-dimensional array to store the data
-    reg [DATA_WIDTH-1:0] fifo [0:FIFO_DEPTH-1]; // 8 entries of 32-bit width
+    
+    reg [DATA_WIDTH-1:0] fifo [0:FIFO_DEPTH-1]; 
 
-    // Wr/Rd pointers with 1 extra MSB bit
+    
     reg [FIFO_DEPTH_LOG:0] write_pointer; // 4-bit pointer
     reg [FIFO_DEPTH_LOG:0] read_pointer;
 
